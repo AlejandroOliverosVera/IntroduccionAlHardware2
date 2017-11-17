@@ -1,25 +1,18 @@
-//Alejandro Oliveros Vera 19.772.624-5
 int retardo = 2000;
 int pinLed = 10;
 int estadoLed = 0;
 
 void setup() {
+  // put your setup code here, to run once:
   pinMode(pinLed, OUTPUT);
 }
-
 void cambiaEstadoLed(){
-  if (estadoLed == 0){
-    estadoLed = 1;
-    digitalWrite(pinLed, HIGH);
-  }else{
-    estadoLed = 0;
-    digitalWrite(pinLed, LOW);
-  }
+  estadoLed = ~estadoLed;
+  digitalWrite(pinLed, estadoLed);
 }
 
 void loop() {
-  cambiaEstadoLed();
-  delay(retardo);
+  // put your main code here, to run repeatedly:
   cambiaEstadoLed();
   delay(retardo);
 }
